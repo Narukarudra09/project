@@ -14,15 +14,13 @@ class Contact extends StatefulWidget {
 class _ContactState extends State<Contact> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      appBar: CustomAppbar(),
-      endDrawer: Drawers(),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            ContactBody(),
-          ],
-        ),
+    return Scaffold(
+      appBar: const CustomAppbar(),
+      endDrawer: const Drawers(),
+      body: ListView(
+        children: [
+          ContactBody(),
+        ],
       ),
     );
   }

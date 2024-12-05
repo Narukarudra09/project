@@ -13,15 +13,13 @@ class About extends StatefulWidget {
 class _AboutState extends State<About> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      appBar: CustomAppbar(),
-      endDrawer: Drawers(),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Body(),
-          ],
-        ),
+    return Scaffold(
+      appBar: const CustomAppbar(),
+      endDrawer: const Drawers(),
+      body: ListView(
+        children: [
+          Body(),
+        ],
       ),
     );
   }
