@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:projects/component/drawer.dart';
-import 'package:projects/component/footer.dart';
 import 'package:projects/util/Contact/body.dart';
 
 import '../component/appbar.dart';
@@ -22,7 +21,6 @@ class _ContactState extends State<Contact> {
         child: Column(
           children: [
             ContactBody(),
-            Footer(),
           ],
         ),
       ),

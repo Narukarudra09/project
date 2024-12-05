@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projects/component/appbar.dart';
 import 'package:projects/component/drawer.dart';
-import 'package:projects/component/end.dart';
-import 'package:projects/component/footer.dart';
 import 'package:projects/util/home/gallery.dart';
 import 'package:projects/util/home/image_slide.dart';
 import 'package:projects/util/home/manager.dart';
@@ -26,8 +24,6 @@ class _HomeState extends State<Home> {
             ImageSlide(),
             const Gallery(),
             const Manager(),
-            const Footer(),
-            const End(),
           ],
         ),
       ),

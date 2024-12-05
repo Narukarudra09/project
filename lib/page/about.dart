@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projects/component/appbar.dart';
 import 'package:projects/component/drawer.dart';
-import 'package:projects/component/footer.dart';
 import 'package:projects/util/about/body.dart';
 
 class About extends StatefulWidget {
@@ -21,7 +20,6 @@ class _AboutState extends State<About> {
         child: Column(
           children: [
             Body(),
-            Footer(),
           ],
         ),
       ),
