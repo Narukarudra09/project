@@ -1,8 +1,30 @@
 import 'package:flutter/material.dart';
 
-class Gallery extends StatelessWidget {
+class Gallery extends StatefulWidget {
   const Gallery({super.key});
 
+  @override
+  State<Gallery> createState() => _GalleryState();
+}
+
+List<String> gallery = [
+  "assets/image/gallery/1.jpg",
+  "assets/image/gallery/2.jpg",
+  "assets/image/gallery/3.jpg",
+  "assets/image/gallery/4.jpg",
+  "assets/image/gallery/5.jpg",
+  "assets/image/gallery/6.jpg",
+  "assets/image/gallery/7.jpg",
+  "assets/image/gallery/8.jpg",
+  "assets/image/gallery/9.jpg",
+  "assets/image/gallery/10.jpg",
+  "assets/image/gallery/11.jpg",
+  "assets/image/gallery/12.jpg",
+  "assets/image/gallery/13.jpg",
+  "assets/image/gallery/14.jpg",
+];
+
+class _GalleryState extends State<Gallery> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -11,156 +33,30 @@ class Gallery extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
+          Text(
             "Gallery",
-            style: TextStyle(fontSize: 24),
+            style: TextStyle(
+              fontSize: 24,
+              color: Colors.blue,
+            ),
+            textAlign: TextAlign.start,
           ),
           const Divider(
             endIndent: 340,
             thickness: 2,
           ),
-          const SizedBox(
-            height: 20,
-          ),
-          Column(
-            children: [
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8),
-                    child: SizedBox(
-                      width: 100,
-                      height: 100,
-                      child: Image.asset("assets/image/gallery/2.jpg"),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8),
-                    child: SizedBox(
-                      width: 100,
-                      height: 100,
-                      child: Image.asset("assets/image/gallery/3.jpg"),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8),
-                    child: SizedBox(
-                      width: 100,
-                      height: 100,
-                      child: Image.asset("assets/image/gallery/4.jpg"),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8),
-                    child: SizedBox(
-                      width: 100,
-                      height: 100,
-                      child: Image.asset("assets/image/gallery/5.jpg"),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8),
-                    child: SizedBox(
-                      width: 100,
-                      height: 100,
-                      child: Image.asset("assets/image/gallery/6.jpg"),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8),
-                    child: SizedBox(
-                      width: 100,
-                      height: 100,
-                      child: Image.asset("assets/image/gallery/7.jpg"),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8),
-                    child: SizedBox(
-                      width: 100,
-                      height: 100,
-                      child: Image.asset("assets/image/gallery/8.jpg"),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8),
-                    child: SizedBox(
-                      width: 100,
-                      height: 100,
-                      child: Image.asset("assets/image/gallery/9.jpg"),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8),
-                    child: SizedBox(
-                      width: 100,
-                      height: 100,
-                      child: Image.asset("assets/image/gallery/10.jpg"),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8),
-                    child: SizedBox(
-                      width: 100,
-                      height: 100,
-                      child: Image.asset("assets/image/gallery/11.jpg"),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8),
-                    child: SizedBox(
-                      width: 100,
-                      height: 100,
-                      child: Image.asset("assets/image/gallery/12.jpg"),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8),
-                    child: SizedBox(
-                      width: 100,
-                      height: 100,
-                      child: Image.asset("assets/image/gallery/13.jpg"),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8),
-                    child: SizedBox(
-                      width: 100,
-                      height: 100,
-                      child: Image.asset("assets/image/gallery/14.jpg"),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8),
-                    child: SizedBox(
-                      width: 100,
-                      height: 100,
-                      child: Image.asset("assets/image/gallery/1.jpg"),
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-          const SizedBox(
-            height: 30,
-          ),
+          GridView.builder(
+              scrollDirection: Axis.vertical,
+              shrinkWrap: true,
+              itemCount: 10,
+              padding: const EdgeInsets.symmetric(horizontal: 12),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2, crossAxisSpacing: 15, mainAxisSpacing: 15),
+              itemBuilder: (context, index) {
+                return GridTile(
+                  child: Image.asset(gallery[index]),
+                );
+              }),
         ],
       ),
     );

@@ -22,6 +22,7 @@ class _HomeState extends State<Home> {
         child: Column(
           children: [
             ImageSlide(),
+            SizedBox(height: 15),
             const Gallery(),
             const Manager(),
           ],
