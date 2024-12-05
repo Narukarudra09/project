@@ -18,15 +18,57 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: const CustomAppbar(),
       endDrawer: const Drawers(),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            ImageSlide(),
-            SizedBox(height: 15),
-            const Gallery(),
-            const Manager(),
-          ],
-        ),
+      body: ListView(
+        children: [
+          ImageSlide(),
+          SizedBox(height: 15),
+          const Gallery(),
+          const Manager(),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Notice",
+                  style: TextStyle(
+                    fontSize: 24,
+                  ),
+                  textAlign: TextAlign.start,
+                ),
+                const Divider(
+                  endIndent: 340,
+                  thickness: 2,
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 40,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Articles",
+                  style: TextStyle(
+                    fontSize: 24,
+                  ),
+                  textAlign: TextAlign.start,
+                ),
+                const Divider(
+                  endIndent: 340,
+                  thickness: 2,
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 40,
+          ),
+        ],
       ),
     );
   }

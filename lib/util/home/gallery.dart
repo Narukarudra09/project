@@ -37,7 +37,6 @@ class _GalleryState extends State<Gallery> {
             "Gallery",
             style: TextStyle(
               fontSize: 24,
-              color: Colors.blue,
             ),
             textAlign: TextAlign.start,
           ),
@@ -45,8 +44,12 @@ class _GalleryState extends State<Gallery> {
             endIndent: 340,
             thickness: 2,
           ),
+          SizedBox(
+            height: 10,
+          ),
           GridView.builder(
-              scrollDirection: Axis.vertical,
+              physics: NeverScrollableScrollPhysics(),
+              addAutomaticKeepAlives: false,
               shrinkWrap: true,
               itemCount: 10,
               padding: const EdgeInsets.symmetric(horizontal: 12),
