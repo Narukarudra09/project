@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:projects/page/contact-us.dart';
 import 'package:projects/page/home.dart';
+import 'package:projects/page/rules.dart';
 
 import '../page/about.dart';
 
@@ -71,6 +72,27 @@ class Drawers extends StatelessWidget {
                 ),
                 title: Text(
                   "Contact Us",
+                  textScaler: TextScaler.linear(1.2),
+                  textAlign: TextAlign.justify,
+                ),
+              ),
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Rules(),
+                  ),
+                );
+              },
+              child: const ListTile(
+                leading: Icon(
+                  Icons.rule,
+                  size: 26,
+                ),
+                title: Text(
+                  "Rules",
                   textScaler: TextScaler.linear(1.2),
                   textAlign: TextAlign.justify,
                 ),
